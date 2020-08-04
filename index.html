@@ -117,7 +117,7 @@
           lonfield: 'Longitude',
           delimiter: ','
         }, function (err, data) {
-          map.on('load', function () {
+          map.on('load', function (e) {
 
             //Add the the layer to the map 
             map.addLayer({
@@ -127,10 +127,19 @@
                 'type': 'geojson',
                 'data': data
               },
-              'paint': {
-                'circle-radius': 5,
-                'circle-color': "red"
-              }
+	      if(e.features[0].properties.Temp > 8){
+		      'paint': {
+			'circle-radius': 5,
+			'circle-color': "red"
+		      }
+	      }
+	      else{
+	    		'paint': {
+			'circle-radius': 5,
+			'circle-color': "green"
+		      }
+	    
+	      }
             });
 
 
