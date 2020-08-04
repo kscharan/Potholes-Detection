@@ -130,7 +130,14 @@
 		      },
 		      'paint': {
 			'circle-radius': 5,
-			'circle-color': "red"
+			'circle-color':  [
+				'match',
+				['get', 'alert'],
+				'1',
+				'#fbb03b',
+
+				/* other */ '#ccc'
+				]
 		      }
 		    });
 		
