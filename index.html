@@ -117,7 +117,7 @@
           lonfield: 'Longitude',
           delimiter: ','
         }, function (err, data) {
-          map.on('load', function () {
+          map.on('load', function (e) {
 	
             //Add the the layer to the map 
 		
@@ -141,13 +141,14 @@
 				]
 		      }
 		    });
-		  /*
+		  
 		map.addLayer({
 			'id': 'route',
 			'type': 'line',
 			'source': {
 				'type': 'geojson',
-				'data': data
+				'data': e.features[0].geometry.coordinates.slice();
+
 		     	 },
 			'layout': {
 				'line-join': 'round',
@@ -158,7 +159,7 @@
 				'line-width': 8
 			}
 		});
-		*/
+		
 
 
             // When a click event occurs on a feature in the csvData layer, open a popup at the
