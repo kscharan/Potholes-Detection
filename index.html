@@ -124,6 +124,7 @@
 		function(error, image) {
 			if (error) throw error;
 			map.addImage('cat', image);
+			
             //Add the the layer to the map 
 			map.addLayer({
 				'id': 'points',
@@ -133,10 +134,18 @@
 					'data': data
 				      },
 				'layout': {
-				'icon-image': 'cat',
-				'icon-size': 0.25
-				}
-			});
+				'icon-size': 0.25,
+				'icon-image': [
+				'match',
+				['get', 'Alert_temp'],
+				'1',
+				'cat',
+				'0',
+				'mapbox-logo'
+				]
+		        }
+		    });
+				
 	
 		}
 	);
