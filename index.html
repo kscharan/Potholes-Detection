@@ -117,9 +117,9 @@
           lonfield: 'Longitude',
           delimiter: ','
         }, function (err, data) {
-          map.on('load', function (e) {
+          map.on('load', function () {
 		
-		  map.loadImage(
+	map.loadImage(
 			'https://upload.wikimedia.org/wikipedia/commons/7/7c/201408_cat.png',
 		function(error, image) {
 			if (error) throw error;
@@ -138,7 +138,9 @@
 				}
 			});
 	
-		  
+		}
+	);
+	
 
             // When a click event occurs on a feature in the csvData layer, open a popup at the
             // location of the feature, with description HTML from its properties.
