@@ -120,10 +120,10 @@
           map.on('load', function () {
 		
 	map.loadImage(
-			'https://upload.wikimedia.org/wikipedia/commons/7/7c/201408_cat.png',
+			'https://cdn0.iconfinder.com/data/icons/isometric-farm-vehicles/64/truck-back-03-512.png',
 		function(error, image) {
 			if (error) throw error;
-			map.addImage('cat', image);
+			map.addImage('truck', image);
 			
             //Add the the layer to the map 
 			map.addLayer({
@@ -135,12 +135,7 @@
 				      },
 				'layout': {
 				'icon-size': 0.25,
-				'icon-image': [
-				'match',
-				['get', 'Alert_temp'],
-				'1',
-				'cat'
-				]
+				'icon-image': 'truck'
 		        }
 		    });
 				
